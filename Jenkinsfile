@@ -8,6 +8,8 @@ def mavenHome = tool name: "Maven3.8.5"
   
     echo "The Build number is: ${env.BUILD_NUMBER}"
     
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])   
+
 //Checkout stage
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: '224cc402-4f28-451b-b694-e13202a74868', url: 'https://github.com/MCS-devops2022/maven-web-application.git'
