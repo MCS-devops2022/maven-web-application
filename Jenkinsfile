@@ -21,7 +21,7 @@ git branch: 'development', credentialsId: '224cc402-4f28-451b-b694-e13202a74868'
 stage('Build'){
 sh "$mavenHome/bin/mvn clean package"
 } 
-
+/*
 //Generate SonarQube Report
 stage('SonarQubeReport'){
 sh "$mavenHome/bin/mvn sonar:sonar"
@@ -38,5 +38,5 @@ sshagent(['06e244c2-e9e6-49f6-bb11-85f5dfb806d6']) {
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.94.87:/opt/apache-tomcat-9.0.59/webapps"
 } 
 }
-
+*/
 }//Node closing
